@@ -2,6 +2,9 @@
 
 ![pokeball](https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png)
 
+
+> Application crée par Massoundi Samir, Matteoli Tristan, Ruiz Tom.
+
 ## Définition du projet
 
 Nous allons créer un pokedex amélioré. Nous voulons offir la possiblité à nos utilisateur d'avoir leur liste classique de pokémons avec toutes les infos qui leur correspond. Mais également de lui permettre de se créer des équipes types, en séléctionnant des éléments tels que les pokémons mais aussi les types.
