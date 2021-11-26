@@ -18,9 +18,9 @@ L'amélioration du pokedex sera composé de plusieures petites features, créant
 * Listing des pokémons avec un affichage type/style pokédex + bouton share sur la liste (deeplink).
 * Musique en fond d'application en utilisant les éléments natifs. Possiblité de gérer la musique (pause, play, stop, avancer, reculer)
 * Lors de l'appuie par l'utilisateur sur un des pokémons :
- `*   Lancement du son que fait le pokémon dans le jeu`
- `*   Affichage d'une modale avec deux boutons. Un pour créer une équipe dans l'application avec et une pour aller visiter site externe (par exemple wikipédia)`
- `*   Création d'une équipe (CRUD complet), sélétion d'un nom mais aussi d'un type (feu/ténèbre...)`
+ *   Lancement du son que fait le pokémon dans le jeu
+ *   Affichage d'une modale avec deux boutons. Un pour créer une équipe dans l'application avec et une pour aller visiter site externe (par exemple wikipédia)
+ *   Création d'une équipe (CRUD complet), sélétion d'un nom mais aussi d'un type (feu/ténèbre...)
 
 ## Languages utilisés
 
