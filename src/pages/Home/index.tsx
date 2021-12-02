@@ -50,7 +50,7 @@ const Home = () => {
       </IonHeader>
       <IonContent id="homePage">
         <IonList>
-          <IonListHeader>Vots équipes :</IonListHeader>
+          <IonListHeader>Vos équipes :</IonListHeader>
           {list.map((l, i) => {
             const { title, items } = l;
             const img = findFirstImgFromItems(items);
