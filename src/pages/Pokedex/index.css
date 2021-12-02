@@ -1,0 +1,20 @@
+#PokedexPage {
+    --padding: 15px;
+  }
+  #PokedexPage ion-header ion-toolbar{
+    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+}
+  #PokedexPage ion-header ion-toolbar ion-title{
+    width: 75%;
+    margin-left: 20px;
+    padding: 0;
+}
+  #PokedexPage ion-header ion-toolbar ion-back-button{
+    width: 20%;
+}
+
+#PokedexPage ion-content{
+    --padding: 10px;
+}

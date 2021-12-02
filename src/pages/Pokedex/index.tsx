@@ -1,38 +1,20 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonRow, IonTitle, IonToolbar } from "@ionic/react";
+import { IonBackButton, IonButtons, IonCol, IonContent, IonHeader, IonNote, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 import React, { useState } from "react";
+import "./index.css";
 
 const Pokedex = () => {
-
     return (
-        <IonPage>
-            <IonHeader>
+        <IonPage id="PokedexPage">
+            <IonHeader class="ion-justify-content-start">
                 <IonToolbar>
-                    <IonTitle>Pokedex</IonTitle>
+                    <IonButtons slot="start">
+                        <IonBackButton defaultHref="/" />
+                        <IonTitle>Pokédex</IonTitle>
+                    </IonButtons>
                 </IonToolbar>
             </IonHeader>
             <IonContent>
-                <IonGrid>
-                    <IonRow>
-                        <IonCol>
-                            <IonItem>
-                                <IonLabel position="floating">Email</IonLabel>
-                                <IonInput
-                                    value={""} placeholder="email"
-                                ></IonInput>
-                            </IonItem>
-                        </IonCol>
-                    </IonRow>
-                    <IonRow>
-                        <IonCol>
-                            <IonItem>
-                                <IonLabel position="floating">Mot de passe</IonLabel>
-                                <IonInput
-                                    value={""} placeholder="password"
-                                ></IonInput>
-                            </IonItem>
-                        </IonCol>
-                    </IonRow>
-                </IonGrid>
+                <IonNote>Ceci est la page pokedex</IonNote>
             </IonContent>
         </IonPage>
     );
