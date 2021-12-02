@@ -12,18 +12,18 @@ const useApi = () => {
             .then(setPokedex)
     }, [])
 
-
-    //a commenter pour faire fonctionner
-    //Principe : promesse où on fetch chaque url des pokemons pour concaténer aux infos déjà présentes
-    Promise.all(
-        pokedex.map(pokemon => new Promise(resolve => fetch(pokemon.url).then((info) => resolve({pokemon, info})))))
+    useEffect(() => {
+        //a commenter pour faire fonctionner
+        //Principe : promesse où on fetch chaque url des pokemons pour concaténer aux infos déjà présentes
+        Promise.all(
+            pokedex.map(pokemon => new Promise(resolve => fetch(pokemon.url).then((info) => resolve({ pokemon, info })))))
         ).then((pokemonsInfo) => {
-        
-        const newArr = pokedex.concat(pokemonsInfo);
-        
-        setState(newArr)
-        
-    })
+
+                const newArr = pokedex.concat(pokemonsInfo);
+
+                setState(newArr)
+
+            }, [])
     // useEffect(() => {
     //     const arrPokedex = Object.values(pokedex);
     //     arrPokedex.map(pokemon => fetch(pokemon.url).then(info => console.log(info)))
