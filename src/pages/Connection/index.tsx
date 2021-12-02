@@ -1,10 +1,10 @@
 import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonRow, IonTitle, IonToolbar } from "@ionic/react";
-import { logoGoogle, saveOutline, lockOpenOutline, mailOutline } from "ionicons/icons";
+import { saveOutline, lockOpenOutline, mailOutline } from "ionicons/icons";
 import React, { useState } from "react";
 import { useConnection } from "../../hooks";
 
 const Connection = () => {
-    const { connectWithGoogle, connection } = useConnection();
+    const { connection } = useConnection();
 
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
@@ -54,10 +54,6 @@ const Connection = () => {
                         </IonCol>
                     </IonRow>
                 </IonGrid>
-                <IonButton shape="round" expand="full" color="danger" onClick={() => connectWithGoogle()}>
-                    Connexion avec google
-                    <IonIcon slot="end" icon={logoGoogle} />
-                </IonButton>
             </IonContent>
         </IonPage>
     );
