@@ -1,5 +1,0 @@
-[{
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target" : { "namespace": "android_app", "package_name": "myFirstIonicApp",
-                 "sha256_cert_fingerprints": ["34:CE:BD:C5:65:30:61:7F:98:C3:9D:54:D4:78:41:C0:12:6B:C4:DA:00:2A:2D:B9:C8:86:4B:5A:73:55:91:A1"] }
-}]

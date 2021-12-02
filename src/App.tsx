@@ -36,15 +36,15 @@ import { App as AppCapacitor, URLOpenListenerEvent } from '@capacitor/app';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAJMEIpRQrltcH6kHqOresJom3NbmiIfsc",
-  authDomain: "exemple-b36df.firebaseapp.com",
-  projectId: "exemple-b36df",
-  storageBucket: "exemple-b36df.appspot.com",
-  messagingSenderId: "768514588429",
-  appId: "1:768514588429:web:2ed7b61dd009e0efbeba44"
 
-}
+const firebaseConfig = {
+  apiKey: "AIzaSyAhEAf9IGpZsnhUTuHfjZvqRwPWcEAwq_Q",
+  authDomain: "pokeionic.firebaseapp.com",
+  projectId: "pokeionic",
+  storageBucket: "pokeionic.appspot.com",
+  messagingSenderId: "709752212918",
+  appId: "1:709752212918:web:596d3f395871e728824517"
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
