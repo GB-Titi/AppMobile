@@ -21,7 +21,7 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 import "./theme/listTopTheme.css";
-import { CreateTop, Home, ViewTop, Connection } from "./pages";
+import { CreateTop, Home, ViewTop, Connection, Pokedex } from "./pages";
 import { Menu } from "./components";
 
 // Import the functions you need from the SDKs you need
@@ -88,6 +88,7 @@ const App: React.FC = () => {
               <Route path="/" exact={true} component={Home} />
               <Route path="/create" exact={true} component={CreateTop} />
               <Route path="/view/:title" exact={true} component={ViewTop} />
+              <Route path="/pokedex" exact={true} component={Pokedex} />
             </IonRouterOutlet>
           )}
         </IonSplitPane>

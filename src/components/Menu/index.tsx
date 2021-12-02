@@ -16,6 +16,7 @@ import {
   add,
   archiveOutline,
   archiveSharp,
+  book,
   heartOutline,
   heartSharp,
   list,
@@ -50,6 +51,12 @@ const appPages: AppPage[] = [
     url: "/create",
     iosIcon: add,
     mdIcon: add,
+  },
+  {
+    title: "Pokedex",
+    url: "/pokedex",
+    iosIcon: book,
+    mdIcon: book,
   },
 ];
 
