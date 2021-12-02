@@ -1,8 +1,11 @@
 import { IonBackButton, IonButtons, IonCol, IonContent, IonHeader, IonNote, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 import React, { useState } from "react";
 import "./index.css";
+import { useApi } from "../../hooks";
 
 const Pokedex = () => {
+    const { pokedex } = useApi();
+    console.log(pokedex);
     return (
         <IonPage id="PokedexPage">
             <IonHeader class="ion-justify-content-start">
