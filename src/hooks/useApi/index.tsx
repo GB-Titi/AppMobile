@@ -28,7 +28,7 @@ const useApi = () => {
                 fetch(pokemon.url).then(res => res.json()).then((info) => resolve({ pokemon, info })), 50 * i)))
             ).then((pokemonsInfo: any) => {
                 const newArr = pokemon.concat(pokemonsInfo);
-                console.log("🚀 ~ file: index.tsx ~ line 31 ~ ).then ~ newArr", newArr)
+                // console.log("🚀 ~ file: index.tsx ~ line 31 ~ ).then ~ newArr", newArr)
                 setInfo(newArr);
             })
         }
