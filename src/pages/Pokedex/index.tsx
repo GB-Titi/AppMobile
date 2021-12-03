@@ -4,8 +4,9 @@ import "./index.css";
 import { useApi } from "../../hooks";
 
 const Pokedex = () => {
-    const { pokedex } = useApi();
+    const { pokedex, pokemon } = useApi();
     console.log(pokedex);
+    console.log(pokemon);
     return (
         <IonPage id="PokedexPage">
             <IonHeader class="ion-justify-content-start">

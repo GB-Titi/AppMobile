@@ -3,27 +3,26 @@ import React, { useEffect, useState } from "react";
 import { Pokedex } from "../../pages";
 
 const useApi = () => {
-    const [pokedex, setPokedex] = useState({});
-    const [pokemon, setInfo] = useState({});
+    const [pokedex, setPokedex] = useState([]);
+    const [pokemon, setInfo] = useState([]);
 
     useEffect(() => {
         fetch("https://pokeapi.co/api/v2/pokemon/")
-            .then(res => res)
+            .then(res => res.json())
             .then(setPokedex)
     }, [])
 
     useEffect(() => {
-        //a commenter pour faire fonctionner
-        //Principe : promesse où on fetch chaque url des pokemons pour concaténer aux infos déjà présentes
-        Promise.all(
-            pokedex.map(pokemon => new Promise(resolve => fetch(pokemon.url).then((info) => resolve({ pokemon, info })))))
-        ).then((pokemonsInfo) => {
-
-                const newArr = pokedex.concat(pokemonsInfo);
-
-                setState(newArr)
-
-            }, [])
+        if (pokedex.length > 0) {
+            Promise.all(
+                pokedex.map((pokemon: any) => new Promise(resolve => fetch(pokemon.url).then((info) => resolve({ pokemon, info }))))
+            ).then((pokemonsInfo: any) => {
+                const newArr = pokemon.concat(pokemonsInfo);
+                console.log("array: " + newArr);
+                setInfo(newArr);
+            })
+        }
+    }, [pokedex])
     // useEffect(() => {
     //     const arrPokedex = Object.values(pokedex);
     //     arrPokedex.map(pokemon => fetch(pokemon.url).then(info => console.log(info)))
@@ -31,7 +30,7 @@ const useApi = () => {
 
     return {
         pokedex,
-        // newArr
+        pokemon
     };
 }
 
