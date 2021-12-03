@@ -39,8 +39,7 @@ const useApi = () => {
     // })
 
     return {
-        pokedex,
-        pokemon
+        pokemon,
     };
 }
 
