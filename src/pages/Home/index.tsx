@@ -16,8 +16,10 @@ import {
   useIonViewDidEnter,
 } from "@ionic/react";
 import { StatusBar } from "@ionic-native/status-bar";
+import { NativeAudio } from "@ionic-native/native-audio/ngx";
 
-import { useTopList } from "../../hooks";
+
+import { useAudio, useTopList } from "../../hooks";
 import { TopItem } from "../../types";
 import "./home.css";
 import { arrowForward } from "ionicons/icons";
@@ -27,11 +29,13 @@ const findFirstImgFromItems = (items: TopItem[]): string | undefined =>
 
 const Home = () => {
   const { list, getLists } = useTopList();
+  const { playMusic } = useAudio();
 
   useEffect(() => {
     StatusBar.overlaysWebView(false);
     StatusBar.styleDefault();
     StatusBar.backgroundColorByHexString("#f7f1e3");
+
   }, []);
 
   useIonViewDidEnter(() => {
@@ -50,7 +54,7 @@ const Home = () => {
       </IonHeader>
       <IonContent id="homePage">
         <IonList>
-          <IonListHeader>Vots équipes :</IonListHeader>
+          <IonListHeader>Vos équipes :</IonListHeader>
           {list.map((l, i) => {
             const { title, items } = l;
             const img = findFirstImgFromItems(items);
