@@ -1,4 +1,4 @@
-import { IonBackButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCol, IonContent, IonHeader, IonInfiniteScroll, IonNote, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { IonBackButton, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCol, IonContent, IonHeader, IonInfiniteScroll, IonNote, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 import React, { useState, useEffect } from "react";
 import "./index.css";
 import { useApi } from "../../hooks";
@@ -11,6 +11,7 @@ const Pokedex = () => {
         //     types: pokemons.info.types.map((t: any) => t.type.name)
         // })))
         console.log("test:", pokemon.map((pokemons: any) =>pokemons.info.types.map((t: any/*, i: number*/) => t.type.name)))
+        console.log("description: ",pokemon.map((pokemons: any) =>pokemons.info.species.url))
       }
     }, [pokemon])
     // console.log(pokemon.map((pokemons: any) => console.log(pokemons.info.abilities)));
@@ -38,19 +39,23 @@ const Pokedex = () => {
                             - Talents -> pokemons.info.types.map((t: any) => t.type.name)
                         */
                         <IonCard key={index}>
-                            <IonCardHeader>
+                            <IonCardHeader key={index}>
                                 <IonCardTitle>
                                     # {pokemons.info.id} - {pokemons.info.name}
                                 </IonCardTitle>
                             </IonCardHeader>
                             <IonCardContent>Image : <img src={pokemons.info.sprites.front_default}/></IonCardContent>
-                            {/* <IonCardContent>Description :  {pokemons.info.flavor_text_entries[0].flavor_text}</IonCardContent> */}
+                            {/* <IonCardContent>Description :  {pokemons.description.flavor_text_entries}</IonCardContent> */}
                             <IonCardContent>Taille : {pokemons.info.height}</IonCardContent>
                             <IonCardContent>Poids :{pokemons.info.weight}</IonCardContent>
-                            <IonCardContent>Types : {pokemons.info.types.map((t: any) => <li>{t.type.name}</li>)}</IonCardContent>
-                            <IonCardContent>Talents : {pokemons.info.abilities.map((t: any) => <li>{t.ability.name}</li>)}</IonCardContent>
+                            <IonCardContent>Types :<ul key={index}> {pokemons.info.types.map((t: any, i: number) => <li key={i}>{t.type.name}</li>)} </ul></IonCardContent>
+                            <IonCardContent>Talents :<ul key={index}> {pokemons.info.abilities.map((t: any, i: number) => <li key={i}>{t.ability.name}</li>)}</ul></IonCardContent>
                         </IonCard>
                     ))}
+                    <IonButtons>
+                        <IonButton>Previus</IonButton>
+                        <IonButton>Next</IonButton>
+                    </IonButtons>
                 </IonInfiniteScroll>
             </IonContent>
         </IonPage>
