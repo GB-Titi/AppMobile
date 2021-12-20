@@ -1,20 +1,43 @@
 #PokedexPage {
-    --padding: 15px;
-  }
-  #PokedexPage ion-header ion-toolbar{
-    width: 100%;
-    display: flex !important;
-    flex-direction: column !important;
-}
-  #PokedexPage ion-header ion-toolbar ion-title{
-    width: 75%;
-    margin-left: 20px;
-    padding: 0;
-}
-  #PokedexPage ion-header ion-toolbar ion-back-button{
-    width: 20%;
+  --padding: 15px;
 }
 
-#PokedexPage ion-content{
-    --padding: 10px;
+#PokedexPage ion-toolbar {
+  width: 100%;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#PokedexPage ion-toolbar {
+  width: 75%;
+  margin-left: 20px;
+  padding: 0;
+}
+
+#PokedexPage ion-toolbar ion-back-button {
+  width: 20%;
+}
+
+.card{
+  display: flex;
+  align-items: center;
+}
+
+
+.card-content-info{
+display: flex;
+flex-direction: column;
+}
+.card-content-title {
+font-size: 1em;
+}
+
+.card-content-text {
+display: flex;
+align-items: center;
+  font-size: 70%;
+}
+
+.type-title{
+  font-size: 110%;
 }

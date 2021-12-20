@@ -51,10 +51,12 @@ const Home = () => {
       <IonContent id="homePage">
         <IonList>
           <IonListHeader>Vos équipes :</IonListHeader>
+          <div className="group-list">
           {list.map((l, i) => {
             const { title, items } = l;
             const img = findFirstImgFromItems(items);
             return (
+             
               <IonItem
                 key={i}
                 className={`${i % 2 === 0 ? "even" : "odd"} ${
@@ -68,10 +70,11 @@ const Home = () => {
                   </IonAvatar>
                 )}
                 <IonLabel>{title}</IonLabel>
-                <IonIcon icon={arrowForward} color="black" />
               </IonItem>
+             
             );
           })}
+           </div>
         </IonList>
       </IonContent>
     </IonPage>
