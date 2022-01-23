@@ -5,7 +5,6 @@ import { useApi } from "../../hooks";
 import { PokemonModalPage } from "../../components";
 
 const Pokedex = () => {
-
     const [showModal, setShowModal] = useState(false)
     const [currentDexNumber, setCurrentDexNumber] = useState(1)
 
@@ -17,9 +16,31 @@ const Pokedex = () => {
             // })))
             console.log("test:", pokemon.map((pokemons: any) => pokemons.info.types.map((t: any/*, i: number*/) => t.type.name)))
             console.log("description: ", pokemon.map((pokemons: any) => pokemons.info.species.url))
+             // console.log(pokemon.map((pokemons: any) => console.log(pokemons.info.abilities)));
+            // console.log("description: ",pokemon.map((pokemons: any) =>fetch(pokemons.info.species.url).then(res => res.json())))
         }
     }, [pokemon])
-    // console.log(pokemon.map((pokemons: any) => console.log(pokemons.info.abilities)));
+
+    
+
+    if (!pokemon) {
+        return (
+          <IonPage>
+            <IonHeader class="ion-justify-content-start">
+                <IonToolbar>
+                    <IonButtons slot="start">
+                        <IonBackButton defaultHref="/" />
+                        <IonTitle>Pokédex</IonTitle>
+                    </IonButtons>
+                </IonToolbar>
+            </IonHeader>
+            <IonContent>
+              <p>Chargement</p>
+            </IonContent>
+          </IonPage>
+        );
+      }
+
     return (
         <IonPage id="PokedexPage">
             <IonHeader class="ion-justify-content-start">
