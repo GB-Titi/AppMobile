@@ -10,6 +10,7 @@ import {
   IonRow,
   IonList,
   IonItemDivider,
+  IonSelect,
 } from "@ionic/react";
 import {
   add,
@@ -20,6 +21,8 @@ import {
   saveOutline,
 } from "ionicons/icons";
 import { TopItem, Top } from "../../types";
+import { useApi } from "../../hooks";
+import { PokemonsSelect } from "..";
 
 type TopFormProps = {
   onSubmit: (top: Top) => void;
@@ -37,7 +40,6 @@ const TopForm = ({ onSubmit }: TopFormProps) => {
       })
     );
   };
-
   const modifyItem = (item: TopItem) =>
     setItems((_items) => {
       let itemFind = _items.find((i) => i.order === item.order);
@@ -45,13 +47,12 @@ const TopForm = ({ onSubmit }: TopFormProps) => {
       itemFind = item;
       return Array.from(_items);
     });
-
   return (
     <IonGrid>
       <IonRow>
         <IonCol>
           <IonItem>
-            <IonLabel position="floating">Titre du top *</IonLabel>
+            <IonLabel position="floating">Nommez votre équipe</IonLabel>
             <IonIcon icon={clipboardOutline} slot="start" />
             <IonInput
               value={title}
@@ -78,7 +79,8 @@ const TopForm = ({ onSubmit }: TopFormProps) => {
                 <IonItemDivider>
                   {item.order}. {item.name}
                 </IonItemDivider>
-                <IonItem>
+                <PokemonsSelect></PokemonsSelect>
+                {/* <IonItem>
                   <IonLabel position="floating">Intitulé *</IonLabel>
                   <IonIcon icon={clipboardOutline} slot="start" />
                   <IonInput
@@ -121,7 +123,7 @@ const TopForm = ({ onSubmit }: TopFormProps) => {
                       modifyItem(item);
                     }}
                   ></IonInput>
-                </IonItem>
+                </IonItem> */}
               </IonCol>
             ))}
           </IonList>

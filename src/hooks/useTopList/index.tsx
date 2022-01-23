@@ -12,7 +12,7 @@ const useTopList = () => {
   const init = useCallback(
     () =>
       getItem<List>(key).then((l) => {
-        if (l && l.length > 0) {
+        if (l && l.length >= 0) {
           setList(l);
         } else {
           setList(defaultList);
@@ -26,7 +26,7 @@ const useTopList = () => {
       new Promise<void>((resolve, reject) => {
         getItem<List>(key)
           .then((l) => {
-            if (l && l.length > 0) {
+            if (l && l.length >= 0) {
               setList(l);
               resolve();
             } else {

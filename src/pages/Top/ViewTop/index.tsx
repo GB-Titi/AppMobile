@@ -1,4 +1,5 @@
 import {
+  IonBackButton,
   IonButton,
   IonButtons,
   IonCard,
@@ -59,7 +60,7 @@ const ViewTop: React.FC<ViewTopProps> = ({ match }) => {
         <IonHeader>
           <IonToolbar>
             <IonButtons slot="start">
-              <IonMenuButton />
+              <IonBackButton/>
             </IonButtons>
             <IonTitle>Liste des top</IonTitle>
           </IonToolbar>
@@ -78,7 +79,7 @@ const ViewTop: React.FC<ViewTopProps> = ({ match }) => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonMenuButton />
+            <IonBackButton/>
           </IonButtons>
           <IonButtons slot="secondary">
             <IonButton onClick={shareOnclick}>
@@ -92,13 +93,13 @@ const ViewTop: React.FC<ViewTopProps> = ({ match }) => {
         <IonGrid>
           <IonRow>
             <IonCol>
-              <h1># {titleTop}</h1>
+              <h1>{titleTop}</h1>
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol>
               {items.map((item) => (
-                <IonCard onClick={() => openLink(item.link)}>
+                <IonCard key={item.order} onClick={() => openLink(item.link)}>
                   {item.img && <img src={item.img} />}
                   <IonCardHeader>
                     <IonCardTitle>

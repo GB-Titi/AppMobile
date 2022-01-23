@@ -26,6 +26,7 @@
     "@types/react-router": "^5.1.11",
     "@types/react-router-dom": "^5.1.7",
     "capacitor": "^0.5.5",
+    "chokidar": "^3.5.2",
     "cordova-plugin-inappbrowser": "^5.0.0",
     "cordova-plugin-nativestorage": "^2.3.2",
     "cordova-plugin-statusbar": "^2.4.3",

@@ -1,0 +1,7 @@
+.alert-wrapper.sc-ion-alert-md {
+    width: 100%;
+}
+
+.sc-ion-alert-md-h {
+    --max-width: 98%;
+}
