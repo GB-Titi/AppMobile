@@ -7,6 +7,7 @@ import { PokemonModalPage } from "../../components";
 const Pokedex = () => {
     const [showModal, setShowModal] = useState(false)
     const [currentDexNumber, setCurrentDexNumber] = useState(1)
+    const [currentDexName, setCurrentDexName] = useState(1)
 
     const { pokemon } = useApi();
     useEffect(() => {
@@ -55,9 +56,7 @@ const Pokedex = () => {
                 <IonModal
                     isOpen={showModal}
                     onDidDismiss={() => setShowModal(false)} >
-                    <p>Modal Content  {currentDexNumber} </p>
-
-                    <PokemonModalPage dexNumber={currentDexNumber} ></PokemonModalPage>
+                    <PokemonModalPage dexNumber={currentDexNumber} dexName={currentDexName} ></PokemonModalPage>
                     <IonButton onClick={() => setShowModal(false)}>Close Modal</IonButton>
                 </IonModal>
                 <IonInfiniteScroll>
@@ -72,23 +71,27 @@ const Pokedex = () => {
                             - Types -> {pokemons.info.types.map((type: string) => type.name)}
                             - Talents -> pokemons.info.types.map((t: any) => t.type.name)
                         */
-                        <IonCard key={index}>
+                        <IonCard key={index} onClick={() => {
+                            setShowModal(true)
+                            setCurrentDexNumber(pokemons.info.id)
+                            setCurrentDexName(pokemon.info.name)
+                        }}>
                             <IonCardHeader key={index}>
                                 <IonCardTitle>
-                                    # {pokemons.info.id} - {pokemons.info.name}
+                                    # {pokemons.info.id} - {pokemons.info.name} <img alt={pokemon.info.name} src={pokemons.info.sprites.front_default} />
                                 </IonCardTitle>
                             </IonCardHeader>
-                            <IonCardContent>Image : <img src={pokemons.info.sprites.front_default} /></IonCardContent>
+                            <IonCardContent></IonCardContent>
                             {/* <IonCardContent>Description :  {pokemons.description.flavor_text_entries}</IonCardContent> */}
-                            <IonCardContent>Taille : {pokemons.info.height}</IonCardContent>
+                            {/* <IonCardContent>Taille : {pokemons.info.height}</IonCardContent>
                             <IonCardContent>Poids :{pokemons.info.weight}</IonCardContent>
                             <IonCardContent>Types :<ul key={index}> {pokemons.info.types.map((t: any, i: number) => <li key={i}>{t.type.name}</li>)} </ul></IonCardContent>
-                            <IonCardContent>Talents :<ul key={index}> {pokemons.info.abilities.map((t: any, i: number) => <li key={i}>{t.ability.name}</li>)}</ul></IonCardContent>
+                            <IonCardContent>Talents :<ul key={index}> {pokemons.info.abilities.map((t: any, i: number) => <li key={i}>{t.ability.name}</li>)}</ul></IonCardContent> */}
 
-                            <IonButton onClick={() => {
+                            {/* <IonButton onClick={() => {
                                 setShowModal(true)
                                 setCurrentDexNumber(pokemons.info.id)
-                            }}>Show Modal</IonButton>
+                            }}>Show Modal</IonButton> */}
                         </IonCard>
                     ))}
                     <IonButtons>

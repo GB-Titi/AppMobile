@@ -1,17 +1,21 @@
 import { IonBackButton, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonInfiniteScroll, IonModal, IonNote, IonPage, IonRow, IonTitle, IonToolbar } from "@ionic/react";
 import React, { useState, useEffect } from "react";
-import "./index.css";
-// import { useApi, usePokemonData, usePokemonSpeciesData } from "../../hooks";
+import "./PokemonModalPage.css";
+import { useApi } from "../../hooks";
 
 type pkdxNumber = {
-    dexNumber: number
+    dexNumber: number;
+}
+type pkdxName = {
+    dexName: string;
 }
 
-const Pokedex = ({ dexNumber }: pkdxNumber) => {
+const PokemonModalPage = ({ dexNumber }: pkdxNumber, {dexName}: pkdxName) => {
     // const { pokemon } = useApi();
-
+    console.log(dexNumber);
     const [pkmnNumber, setPkmnNumber] = useState(dexNumber)
-
+    const [pkmnName, setPkmnName] = useState(dexName)
+    const { pokemon } = useApi();
     // const { pokemon } = usePokemonData(pkmnNumber)
     // const {pokemonSpeciesData } = usePokemonSpeciesData(pkmnNumber)
 
@@ -19,7 +23,8 @@ const Pokedex = ({ dexNumber }: pkdxNumber) => {
     // console.log("pokémon data Species", pokemonSpeciesData)
     return (
         <IonContent>
-            pokémon : {pkmnNumber}
+            id : {pkmnNumber}
+            pokemon : {pkmnName}
             <IonGrid>
                 
                 {/*{pokemonSpeciesData.flavor_text_entries[0].flavor_text}
@@ -72,4 +77,4 @@ const Pokedex = ({ dexNumber }: pkdxNumber) => {
     );
 }
 
-export default Pokedex;
+export default PokemonModalPage;
