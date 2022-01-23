@@ -99,7 +99,7 @@ const ViewTop: React.FC<ViewTopProps> = ({ match }) => {
           <IonRow>
             <IonCol>
               {items.map((item) => (
-                <IonCard onClick={() => openLink(item.link)}>
+                <IonCard key={item.order} onClick={() => openLink(item.link)}>
                   {item.img && <img src={item.img} />}
                   <IonCardHeader>
                     <IonCardTitle>

@@ -7,7 +7,14 @@ import { PokemonModalPage } from "../../components";
 const Pokedex = () => {
     const [showModal, setShowModal] = useState(false)
     const [currentDexName, setCurrentDexName] = useState("")
-    const [currentDexType, setCurrentDexType] = useState("")
+    const [currentDexNum, setCurrentDexNum] = useState(1)
+    const [currentDexImg, setCurrentDexImg] = useState("")
+    const [currentDexPoid, setCurrentDexPoid] = useState(1)
+    // const [currentDexDesc, setCurrentDexDesc] = useState("")
+    const [currentDexTaille, setCurrentDexTaille] = useState(1)
+    const [currentDexTalents, setCurrentDexTalents] = useState([])
+    const [currentDexType, setCurrentDexType] = useState([])
+
 
     const { pokemon } = useApi();
     useEffect(() => {
@@ -60,6 +67,12 @@ const Pokedex = () => {
 
                     <PokemonModalPage 
                         dexName={currentDexName} 
+                        dexNum={currentDexNum}
+                        dexImg={currentDexImg} 
+                        // dexDesc={currentDexDesc}
+                        dexTaille={currentDexTaille} 
+                        dexPoid={currentDexPoid}
+                        dexTalents={currentDexTalents} 
                         dexType={currentDexType}
                         // ... tes autes données sous la meme forme qui doivent etre renseignées dans le type du componsant modale
                         ></PokemonModalPage>                  
@@ -79,7 +92,13 @@ const Pokedex = () => {
                         <IonCard key={index} onClick={() => {
                             setShowModal(true)
                             setCurrentDexName(pokemons.info.name)
-                            setCurrentDexType(pokemons.info.name)
+                            setCurrentDexNum(pokemons.info.id)
+                            // setCurrentDexDesc(pokemons.info.flavor_text_entries[0].flavor_text)
+                            setCurrentDexImg(pokemons.info.sprites.front_default)
+                            setCurrentDexPoid(pokemons.info.weight)
+                            setCurrentDexTaille(pokemons.info.height)
+                            setCurrentDexTalents(pokemons.info.abilities.map((t: any) => t.ability.name))
+                            setCurrentDexType(pokemons.info.types.map((t: any) => t.type.name))
                         }}>
                             <IonCardHeader key={index}>
                                 <IonCardTitle>
