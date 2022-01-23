@@ -4,41 +4,43 @@ import "./PokemonModalPage.css";
 import { useApi } from "../../hooks";
 
 type pkdxData = {
-    dexNumber: number;
-    dexName: number;
+    dexName: string;
+    dexType: string;
     // tes autres informations que tu veux transmettre
 }
 
-const PokemonModalPage = ({ dexNumber,
-                            dexName,
+const PokemonModalPage = ({ dexName,
+                            dexType
                         //renseigne les autres données membres du type pkdxdata di tu en ajoute
                         }: pkdxData) => {
     // const { pokemon } = useApi();
-    console.log(dexNumber);
-    const [pkmnNumber, setPkmnNumber] = useState(dexNumber)
+    console.log(dexName);
+    const [pkmnType, setPkmnType] = useState(dexType)
     const [pkmnName, setPkmnName] = useState(dexName)
     const { pokemon } = useApi();
-    // const { pokemon } = usePokemonData(pkmnNumber)
-    // const {pokemonSpeciesData } = usePokemonSpeciesData(pkmnNumber)
+    // const { pokemon } = usePokemonData(pkmnType)
+    // const {pokemonSpeciesData } = usePokemonSpeciesData(pkmnType)
 
     // console.log("pokémon data", pokemon)
     // console.log("pokémon data Species", pokemonSpeciesData)
     return (
         <IonContent>
-            id : {pkmnNumber}
             pokemon : {pkmnName}
+
+            {/* Faire un case en fonction du type -> charger une image du type */}
+            Type : {pkmnType}
             <IonGrid>
                 
                 {/*{pokemonSpeciesData.flavor_text_entries[0].flavor_text}
                 <IonCol>
-                        {pkmnNumber > 1
-                            ? <IonButton onClick={() => setPkmnNumber(pkmnNumber - 1)}>&lt;- </IonButton>
+                        {pkmnType > 1
+                            ? <IonButton onClick={() => setPkmnType(pkmnType - 1)}>&lt;- </IonButton>
                             : <IonButton color='medium'>&lt;- </IonButton>}
 
                         #{pokemonSpeciesData.id} - {pokemonSpeciesData.name}
 
-                        {pkmnNumber <= 99
-                            ? <IonButton onClick={() => setPkmnNumber(pkmnNumber + 1)}>-&gt;</IonButton>
+                        {pkmnType <= 99
+                            ? <IonButton onClick={() => setPkmnType(pkmnType + 1)}>-&gt;</IonButton>
                             : <IonButton color='medium'>-&gt;</IonButton>}
                     </IonCol> <IonRow>
                     <IonCol>

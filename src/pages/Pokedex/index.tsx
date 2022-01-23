@@ -6,8 +6,8 @@ import { PokemonModalPage } from "../../components";
 
 const Pokedex = () => {
     const [showModal, setShowModal] = useState(false)
-    const [currentDexNumber, setCurrentDexNumber] = useState(1)
-    const [currentDexName, setCurrentDexName] = useState(1)
+    const [currentDexName, setCurrentDexName] = useState("")
+    const [currentDexType, setCurrentDexType] = useState("")
 
     const { pokemon } = useApi();
     useEffect(() => {
@@ -56,12 +56,13 @@ const Pokedex = () => {
                 <IonModal
                     isOpen={showModal}
                     onDidDismiss={() => setShowModal(false)} >
+                    <IonButton onClick={() => setShowModal(false)}>X</IonButton>
+
                     <PokemonModalPage 
-                        dexName={currentDexNumber} 
-                        dexNumber={ currentDexName}
+                        dexName={currentDexName} 
+                        dexType={currentDexType}
                         // ... tes autes données sous la meme forme qui doivent etre renseignées dans le type du componsant modale
-                        ></PokemonModalPage>
-                    <IonButton onClick={() => setShowModal(false)}>Close Modal</IonButton>
+                        ></PokemonModalPage>                  
                 </IonModal>
                 <IonInfiniteScroll>
                     {pokemon.map((pokemons: any, index: number) => (
@@ -77,12 +78,12 @@ const Pokedex = () => {
                         */
                         <IonCard key={index} onClick={() => {
                             setShowModal(true)
-                            setCurrentDexNumber(pokemons.info.id)
-                            setCurrentDexName(pokemon.info.name)
+                            setCurrentDexName(pokemons.info.name)
+                            setCurrentDexType(pokemons.info.name)
                         }}>
                             <IonCardHeader key={index}>
                                 <IonCardTitle>
-                                    # {pokemons.info.id} - {pokemons.info.name} <img alt={pokemon.info.name} src={pokemons.info.sprites.front_default} />
+                                    # {pokemons.info.id} - {pokemons.info.name} <img alt={pokemons.info.name} src={pokemons.info.sprites.front_default} />
                                 </IonCardTitle>
                             </IonCardHeader>
                             <IonCardContent></IonCardContent>

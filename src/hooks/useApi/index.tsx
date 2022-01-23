@@ -24,9 +24,11 @@ const useApi = () => {
     // const [description, setDescription] = useState<Pokemon|null>(null);
 
     useEffect(() => {
-        fetch("https://pokeapi.co/api/v2/pokemon/?limit=50")
-            .then(res => res.json())
-            .then((res: Pokedex) => setPokedex(res))
+        if(!pokedex){
+            fetch("https://pokeapi.co/api/v2/pokemon/?limit=50")
+                .then(res => res.json())
+                .then((res: Pokedex) => setPokedex(res))
+        }
     }, [])
  
     // const p1 = new Promise(resolve =>fetch(pokemon.url).then(res => res.json()).then((info) => resolve({ pokemon, info })));
