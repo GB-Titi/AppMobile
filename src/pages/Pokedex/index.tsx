@@ -56,7 +56,11 @@ const Pokedex = () => {
                 <IonModal
                     isOpen={showModal}
                     onDidDismiss={() => setShowModal(false)} >
-                    <PokemonModalPage dexNumber={currentDexNumber} dexName={currentDexName} ></PokemonModalPage>
+                    <PokemonModalPage 
+                        dexName={currentDexNumber} 
+                        dexNumber={ currentDexName}
+                        // ... tes autes données sous la meme forme qui doivent etre renseignées dans le type du componsant modale
+                        ></PokemonModalPage>
                     <IonButton onClick={() => setShowModal(false)}>Close Modal</IonButton>
                 </IonModal>
                 <IonInfiniteScroll>

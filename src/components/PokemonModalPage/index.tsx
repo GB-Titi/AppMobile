@@ -3,14 +3,16 @@ import React, { useState, useEffect } from "react";
 import "./PokemonModalPage.css";
 import { useApi } from "../../hooks";
 
-type pkdxNumber = {
+type pkdxData = {
     dexNumber: number;
-}
-type pkdxName = {
-    dexName: string;
+    dexName: number;
+    // tes autres informations que tu veux transmettre
 }
 
-const PokemonModalPage = ({ dexNumber }: pkdxNumber, {dexName}: pkdxName) => {
+const PokemonModalPage = ({ dexNumber,
+                            dexName,
+                        //renseigne les autres données membres du type pkdxdata di tu en ajoute
+                        }: pkdxData) => {
     // const { pokemon } = useApi();
     console.log(dexNumber);
     const [pkmnNumber, setPkmnNumber] = useState(dexNumber)
