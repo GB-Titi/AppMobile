@@ -14,7 +14,7 @@ const Pokedex = () => {
     const [currentDexTaille, setCurrentDexTaille] = useState(1)
     const [currentDexTalents, setCurrentDexTalents] = useState([])
     const [currentDexType, setCurrentDexType] = useState([])
-
+    const [page, setCurrentPage] = useState(1)
 
     const { pokemon } = useApi();
     useEffect(() => {
@@ -29,7 +29,7 @@ const Pokedex = () => {
         }
     }, [pokemon])
 
-    
+ 
 
     if (!pokemon) {
         return (

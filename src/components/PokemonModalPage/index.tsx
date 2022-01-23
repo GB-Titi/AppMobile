@@ -45,8 +45,31 @@ const PokemonModalPage = ({ dexName,
             setPkmnDesc(result.flavor_text_entries[0].flavor_text)
         }
     })
+    console.log(pkmnType)
+    let imgType = ""
+    // const AllTypes = [
+    //     "normal",
+    //     "fighting",
+    //     "flying",
+    //     "poison",
+    //     "ground",
+    //     "rock",
+    //     "bug",
+    //     "ghost",
+    //     "steel",
+    //     "fire",
+    //     "water",
+    //     "grass",
+    //     "electric",
+    //     "psychic",
+    //     "ice",
+    //     "dragon",
+    //     "dark",
+    //     "fairy",
+    //     "unknown",
+    //     "shadow",
+    // ]
 
-    console.log(pkmnDesc)
     // const { pokemon } = usePokemonData(pkmnType)
     // const {pokemonSpeciesData } = usePokemonSpeciesData(pkmnType)
 
@@ -63,8 +86,66 @@ const PokemonModalPage = ({ dexName,
                     <IonRow><img alt={pkmnName} src={pkmnImg}></img></IonRow>
                     <IonRow>Poid : {pkmnPoid}</IonRow>
                     <IonRow>Taille : {pkmnTaille}</IonRow>
-                    <IonRow>Talents : {pkmnTalents}</IonRow>
-                    <IonRow>Type : {pkmnType} </IonRow>
+                    <IonRow>Talents : 
+                        {pkmnTalents.map(function(object, i){                    
+                            return <IonCol key={i}>{object}</IonCol>;
+                        })}
+                    </IonRow>
+
+                    {/* {pkmnType == "fire"
+                        ? <IonRow>Test</IonRow>
+                        : <IonRow>nan</IonRow>
+                    } */}
+                    <IonRow>Types : 
+                    {pkmnType.map(function(object, i){
+                        console.log(object)
+                        if(object as string == 'normal'){
+                            imgType = "/assets/types/normal.png"
+                        }else if(object as string == 'fighting'){
+                            imgType = "/assets/types/fighting.png"
+                        }else if(object as string == 'flying'){
+                            imgType = "/assets/types/flying.png"
+                        }else if(object as string == 'poison'){
+                            imgType = "/assets/types/poison.png"
+                        }else if(object as string == 'ground'){
+                            imgType = "/assets/types/ground.png"
+                        }else if(object as string == 'rock'){
+                            imgType = "/assets/types/rock.png"
+                        }else if(object as string == 'bug'){
+                            imgType = "/assets/types/bug.png"
+                        }else if(object as string == 'ghost'){
+                            imgType = "/assets/types/ghost.png"
+                        }else if(object as string == 'steel'){
+                            imgType = "/assets/types/steel.png"
+                        }else if(object as string == 'fire'){
+                            imgType = "/assets/types/fire.png"
+                        }else if(object as string == 'water'){
+                            imgType = "/assets/types/water.png"
+                        }else if(object as string == 'grass'){
+                            imgType = "/assets/types/grass.png"
+                        }else if(object as string == 'electric'){
+                            imgType = "/assets/types/electric.png"
+                        }else if(object as string == 'psychic'){
+                            imgType = "/assets/types/psychic.png"
+                        }else if(object as string == 'ice'){
+                            imgType = "/assets/types/ice.png"
+                        }else if(object as string == 'dragon'){
+                            imgType = "/assets/types/dragon.png"
+                        }else if(object as string == 'dark'){
+                            imgType = "/assets/types/dark.png"
+                        }else if(object as string == 'fairy'){
+                            imgType = "/assets/types/fairy.webp"
+                        }else if(object as string == 'unknown'){
+                            imgType = "/assets/types/unknown.png"
+                        }else if(object as string == 'shadow'){
+                            imgType = "/assets/types/shadow.png"
+                        }else{
+                            return console.log('pas trouvé')
+                        }
+                        return <IonCol key={i}><img src={imgType} /></IonCol>;
+                    })}
+                    </IonRow>
+                    {/* <IonRow>Type : {pkmnType} </IonRow> */}
                 </IonCol>
                 {/*{pokemonSpeciesData.flavor_text_entries[0].flavor_text}
                 <IonCol>
