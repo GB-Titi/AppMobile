@@ -143,8 +143,10 @@ const PokemonModalPage = ({ dexName,
                         <IonRow className="modal_poid">WT : {pkmnPoid}''</IonRow>
                         <IonRow className="modal_poid">HT : {pkmnTaille} lbs.</IonRow>
                         <IonRow className="modal_talents">
-                            {pkmnTalents.map(function(object, i){                    
-                                return <IonCol className="col_talents" key={i}>{object}</IonCol>;
+                            {pkmnTalents.map(function(object, i){      
+                                if(i < 2){
+                                    return <IonCol className="col_talents" key={i}>{object}</IonCol>;
+                                }              
                             })}
                         </IonRow>
                     </IonCol>  
