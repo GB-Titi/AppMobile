@@ -1,4 +1,20 @@
-import { IonBackButton, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCol, IonContent, IonHeader, IonInfiniteScroll, IonModal, IonNote, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardTitle,
+  IonCol,
+  IonContent,
+  IonHeader,
+  IonInfiniteScroll,
+  IonNote,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/react";
 import React, { useState, useEffect } from "react";
 import "./index.css";
 import { useApi } from "../../hooks";
@@ -28,12 +44,10 @@ const Pokedex = () => {
             // console.log("description: ",pokemon.map((pokemons: any) =>fetch(pokemons.info.species.url).then(res => res.json())))
         }
     }, [pokemon])
-
- 
-
+  
     if (!pokemon) {
         return (
-          <IonPage>
+          <IonPage id="PokedexPage">
             <IonHeader class="ion-justify-content-start">
                 <IonToolbar>
                     <IonButtons slot="start">
@@ -89,7 +103,7 @@ const Pokedex = () => {
                             - Types -> {pokemons.info.types.map((type: string) => type.name)}
                             - Talents -> pokemons.info.types.map((t: any) => t.type.name)
                         */
-                        <IonCard key={index} onClick={() => {
+                        <IonCard className="card" key={index} onClick={() => {
                             setShowModal(true)
                             setCurrentDexName(pokemons.info.name)
                             setCurrentDexNum(pokemons.info.id)
@@ -100,12 +114,12 @@ const Pokedex = () => {
                             setCurrentDexTalents(pokemons.info.abilities.map((t: any) => t.ability.name))
                             setCurrentDexType(pokemons.info.types.map((t: any) => t.type.name))
                         }}>
-                            <IonCardHeader key={index}>
-                                <IonCardTitle>
+                            <IonCardHeader className="header-img" key={index}>
+                                <IonCardTitle className="card-content-title">
                                     # {pokemons.info.id} - {pokemons.info.name} <img alt={pokemons.info.name} src={pokemons.info.sprites.front_default} />
                                 </IonCardTitle>
                             </IonCardHeader>
-                            <IonCardContent></IonCardContent>
+                            <IonCardContent className="card-content-info"></IonCardContent>
                             {/* <IonCardContent>Description :  {pokemons.description.flavor_text_entries}</IonCardContent> */}
                             {/* <IonCardContent>Taille : {pokemons.info.height}</IonCardContent>
                             <IonCardContent>Poids :{pokemons.info.weight}</IonCardContent>
