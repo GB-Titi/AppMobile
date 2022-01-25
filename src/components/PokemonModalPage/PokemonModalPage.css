@@ -1,0 +1,95 @@
+.modal_content{
+    background-image: url('../assets/pokedex/background.jpg') !important;
+    height: 100%;
+    background-size:contain;
+    max-height: 100%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.modal_col{
+    width: 80%;
+    margin: 50% auto auto 8%;
+    height: 30%;
+    padding-top: 8px;
+    display: inline-block;
+}
+
+.modal{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+
+.modal_img{
+    border: solid 2px #ffdc82;
+    border-radius: 15px;
+    width: 30%;
+    height: 40%;
+    background-color:white;
+    display: inline-block;
+}
+
+.img_pkmn{
+    width: 150px;
+}
+
+.modal_infos{
+    width: 70%;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px 0px 0px 10px;
+}
+
+.modal_1st_row{
+    display: block;
+    border-bottom: solid 1px black;
+    width: max-content;
+}
+
+.pkmn_numb{
+    width: max-content;
+    padding: 0px;
+    margin-right:10px;
+}
+
+.pkmn_name{
+    font-family: 'PokemonTitle';
+    font-weight: normal;
+    font-size: 15px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: max-content;
+    padding: 0px;
+    margin:0px;
+}
+
+.modal_poid{
+    font-size: 8px;
+    margin-bottom: 5px;
+}
+
+.col_talents{
+    width: max-content;
+    border: solid 1px #ffdc82;
+    background-color: white;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.modal_talents{
+    display: inline-block;
+    font-size: 6.5px;
+}
+
+.modal_desc{
+    width: 95%;
+    margin: auto;
+    padding: 5px;
+    border: solid 3px #82b804;
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 0px;
+    margin-top: 10px;
+}
