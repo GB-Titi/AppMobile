@@ -10,6 +10,7 @@ import {
   IonContent,
   IonHeader,
   IonInfiniteScroll,
+  IonModal,
   IonNote,
   IonPage,
   IonTitle,
@@ -103,7 +104,7 @@ const Pokedex = () => {
                             - Types -> {pokemons.info.types.map((type: string) => type.name)}
                             - Talents -> pokemons.info.types.map((t: any) => t.type.name)
                         */
-                        <IonCard className="card" key={index} onClick={() => {
+                        <IonCard  key={index} onClick={() => {
                             setShowModal(true)
                             setCurrentDexName(pokemons.info.name)
                             setCurrentDexNum(pokemons.info.id)
@@ -115,11 +116,11 @@ const Pokedex = () => {
                             setCurrentDexType(pokemons.info.types.map((t: any) => t.type.name))
                         }}>
                             <IonCardHeader className="header-img" key={index}>
-                                <IonCardTitle className="card-content-title">
+                                <IonCardTitle >
                                     # {pokemons.info.id} - {pokemons.info.name} <img alt={pokemons.info.name} src={pokemons.info.sprites.front_default} />
                                 </IonCardTitle>
                             </IonCardHeader>
-                            <IonCardContent className="card-content-info"></IonCardContent>
+                            <IonCardContent></IonCardContent>
                             {/* <IonCardContent>Description :  {pokemons.description.flavor_text_entries}</IonCardContent> */}
                             {/* <IonCardContent>Taille : {pokemons.info.height}</IonCardContent>
                             <IonCardContent>Poids :{pokemons.info.weight}</IonCardContent>

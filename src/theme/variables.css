@@ -2,7 +2,29 @@
 http://ionicframework.com/docs/theming/ */
 
 /** Ionic CSS Variables **/
+@font-face {
+  font-family: PokedexFont;
+  src: url("../components/assets/fonts/pokemon-gb-font/PokemonGb-RAeo.ttf");
+}
+
+@font-face {
+  font-family: PokemonTitle;
+  src: url("../components/assets/fonts/pokemon-solid-font/PokemonSolidNormal-xyWR.ttf");
+}
+
+ion-title.md.title-default.hydrated{
+  font-family: 'PokemonTitle' !important;
+}
+
+ion-grid.modal_content.md.hydrated{
+  font-family: 'PokedexFont';
+  letter-spacing: -1px !important;
+  font-size: 10px !important;
+  color:black;
+}
+
 :root {
+
 	--ion-color-primary: #DC0A2D;
 	--ion-color-primary-rgb: 220,10,45;
 	--ion-color-primary-contrast: #ffffff;
