@@ -25,9 +25,11 @@ display: flex;
 flex-direction: column;
 }
 .card-content-title {
-font-size: 1em;
-font-weight: bold;
+font-size: 0.8em;
+font-weight: normal;
 text-align: center;
+font-family: 'PokedexFont';
+letter-spacing: -1px;
 }
 
 .card-content-text {
@@ -55,8 +57,9 @@ align-items: center;
 }
 
 .pokemon_name{
-  font-family: 'PokemonTitle';
+  font-family: 'PokemonTitle' !important;
   font-weight: normal;
   letter-spacing: 1px;
+  font-size: 1rem !important;
   text-transform: uppercase;
 }

@@ -120,7 +120,7 @@ const Pokedex = () => {
                         }}>
                             <IonCardHeader key={index}>
                                 <IonCardTitle className="card-content-title">
-                                    No.{pokemons.info.id} - <IonLabel className="pokemon_name">{pokemons.info.name}</IonLabel>
+                                    No.{pokemons.info.id}<br/> <IonLabel className="pokemon_name">{pokemons.info.name}</IonLabel>
                                 </IonCardTitle>
                             </IonCardHeader>
                             <IonCardContent className="header-img" onLoad={() => setCurrentDexType(pokemons.info.types.map((t: any) => t.type.name))}>
