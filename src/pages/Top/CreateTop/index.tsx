@@ -12,7 +12,7 @@ import { TopForm } from "../../../components";
 import { useTopList } from "../../../hooks";
 import { RouteComponentProps } from "react-router";
 import { Top } from "../../../types";
-
+import './index.css' 
 const CreateTop = ({ history }: RouteComponentProps) => {
   const { pushTop } = useTopList();
 

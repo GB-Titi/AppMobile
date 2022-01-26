@@ -1,0 +1,8 @@
+
+ion-alert.select-alert button {
+    color: black !important;
+    font-size: 20px !important;
+}
+ion-alert.select-alert .sc-ion-alert-md {
+    color: black;
+}
