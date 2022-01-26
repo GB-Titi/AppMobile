@@ -17,6 +17,8 @@ const CreateTop = ({ history }: RouteComponentProps) => {
   const { pushTop } = useTopList();
 
   const handleSubmit = (top: Top) => {
+    console.log(top);
+    
     pushTop(top);
     history.replace("/");
   };
