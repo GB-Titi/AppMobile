@@ -37,6 +37,7 @@ const Pokedex = () => {
     let imgType = ''
 
     const { pokemon } = useApi();
+
     useEffect(() => {
         if (pokemon.length > 0) {
             // console.log("🚀 ~ file: index.tsx ~ line 10 ~ useEffect ~ pokemon", pokemon.map((pokemons: any) => ({
@@ -49,7 +50,7 @@ const Pokedex = () => {
         }
     }, [pokemon])
   
-    if (!pokemon) {
+    if (pokemon.length < 0) {
         return (
           <IonPage id="PokedexPage">
             <IonHeader class="ion-justify-content-start">
@@ -65,7 +66,10 @@ const Pokedex = () => {
             </IonContent>
           </IonPage>
         );
-      }
+    }
+
+
+
 
     return (
         <IonPage id="PokedexPage">

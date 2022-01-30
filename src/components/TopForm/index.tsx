@@ -24,6 +24,7 @@ import {
 import { TopItem, Top } from "../../types";
 import { useApi } from "../../hooks";
 import { PokemonsSelect } from "..";
+import "./TopForm.css";
 
 type TopFormProps = {
 	onSubmit: (top: Top) => void;
@@ -64,14 +65,12 @@ const TopForm = ({ onSubmit }: TopFormProps) => {
 					</IonItem>
 				</IonCol>
 			</IonRow>
-			<IonRow>
-				<IonCol size="9">
-					<h3>Ajouter un élément</h3>
-				</IonCol>
+			<IonRow className="add_element">
 				<IonCol>
-					<IonButton shape="round" color="success" onClick={appendNewItem}>
-						<IonIcon icon={add} />
+					<IonButton className="add_btn" shape="round" color="success" onClick={appendNewItem}>
+						<IonIcon icon={add} className="add"/>
 					</IonButton>
+					<IonLabel className="add_pokemon">Ajoutez un pokémon à votre équipe </IonLabel>
 				</IonCol>
 			</IonRow>
 			<IonRow>

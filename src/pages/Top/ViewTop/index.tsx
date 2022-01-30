@@ -26,6 +26,7 @@ import { useTopList } from "../../../hooks";
 import { Top } from "../../../types";
 import { shareSocialOutline } from "ionicons/icons";
 import TeamItem from "../TeamItem/TeamItem";
+import "./ViewTop.css";
 
 type ViewTopProps = RouteComponentProps<{
   title: string;
@@ -94,7 +95,7 @@ const ViewTop: React.FC<ViewTopProps> = ({ match }) => {
         <IonGrid>
           <IonRow>
             <IonCol>
-              <h1>{titleTop}</h1>
+              <h1 className="title_top">{titleTop}</h1>
             </IonCol>
           </IonRow>
           <IonRow>

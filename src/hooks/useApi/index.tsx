@@ -52,7 +52,7 @@ const useApi = () => {
         if (pokedex) {
             Promise.all(
                 pokedex.results.map((pokemon, i) => new Promise(resolve =>  setTimeout(() =>
-                fetch(pokemon.url).then(res => res.json()).then((info) => resolve({ pokemon, info })), 15 * i)))
+                fetch(pokemon.url).then(res => res.json()).then((info) => resolve({ pokemon, info })), 25 * i)))
             ).then((pokemonsInfo: any) => {
                 const newArr = pokemon.concat(pokemonsInfo);
                 console.log("🚀 ~ file: index.tsx ~ line 31 ~ ).then ~ newArr", newArr)
