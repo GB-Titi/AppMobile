@@ -27,7 +27,10 @@ const TeamItem = ({ dexNumber }: pkdxNumber) => {
                 <IonRow className="xp">BASE XP: {pokemon && pokemon.base_experience}</IonRow>
                 <IonRow className="Area">Areas encounter:</IonRow>
                 {pokemonArea && pokemonArea.map(
-                    (t: any, i: number) => <IonRow className="area_name" key={i}>{t.location_area.name}</IonRow>
+                    (t: any, i: number) => 
+                    <IonRow className="area_name" key={i}>
+                        {t.location_area.name}
+                    </IonRow>
                 )}
         </IonCard>
 

@@ -49,7 +49,7 @@ const ViewTop: React.FC<ViewTopProps> = ({ match }) => {
   };
 
   useEffect(() => {
-    getLists(); //.then(() => setTop(findTopByTitle(title)));
+    getLists().then(() => setTop(findTopByTitle(title)));
   }, [getLists]);
 
   useEffect(() => {

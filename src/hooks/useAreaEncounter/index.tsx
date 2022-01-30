@@ -15,7 +15,6 @@ const useAreaEncounter = (pkmnNumber: string) => {
             .catch((error) => {
                 setError(error)
                 console.log('error', error);
-
             }
 
             )

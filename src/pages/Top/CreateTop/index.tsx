@@ -21,6 +21,7 @@ const CreateTop = ({ history }: RouteComponentProps) => {
     
     pushTop(top);
     history.replace("/");
+    window.history.forward();
   };
 
   return (
