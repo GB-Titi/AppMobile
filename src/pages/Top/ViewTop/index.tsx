@@ -25,6 +25,8 @@ import { SocialSharing } from "@ionic-native/social-sharing";
 import { useTopList } from "../../../hooks";
 import { Top } from "../../../types";
 import { shareSocialOutline } from "ionicons/icons";
+import TeamItem from "../TeamItem/TeamItem";
+import "./ViewTop.css";
 
 type ViewTopProps = RouteComponentProps<{
   title: string;
@@ -47,7 +49,7 @@ const ViewTop: React.FC<ViewTopProps> = ({ match }) => {
   };
 
   useEffect(() => {
-    getLists(); //.then(() => setTop(findTopByTitle(title)));
+    getLists().then(() => setTop(findTopByTitle(title)));
   }, [getLists]);
 
   useEffect(() => {
@@ -93,21 +95,14 @@ const ViewTop: React.FC<ViewTopProps> = ({ match }) => {
         <IonGrid>
           <IonRow>
             <IonCol>
-              <h1>{titleTop}</h1>
+              <h1 className="title_top">{titleTop}</h1>
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol>
               {items.map((item) => (
-                <IonCard key={item.order} onClick={() => openLink(item.link)}>
-                  {item.img && <img src={item.img} />}
-                  <IonCardHeader>
-                    <IonCardTitle>
-                      {item.order}. {item.name}
-                    </IonCardTitle>
-                  </IonCardHeader>
-                  <IonCardContent>{item.description}</IonCardContent>
-                </IonCard>
+
+                <TeamItem dexNumber={item}/>
               ))}
             </IonCol>
           </IonRow>

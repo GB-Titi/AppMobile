@@ -36,7 +36,23 @@ const Pokedex = () => {
     const [page, setCurrentPage] = useState(1)
     let imgType = ''
 
-    const { pokemon } = useApi();
+    const [offset, setOffest] = useState(50)
+
+    const { pokemon } = useApi(offset);
+
+    const handleNextPage = () => {
+        if (offset <= 50) 
+        {
+            setOffest(offset+50)
+        }
+    }
+
+    const handlePrevPage = () => {
+        if (offset >= 50) 
+        {
+            setOffest(offset-50)
+        }
+    }
     useEffect(() => {
         if (pokemon.length > 0) {
             // console.log("🚀 ~ file: index.tsx ~ line 10 ~ useEffect ~ pokemon", pokemon.map((pokemons: any) => ({
@@ -49,7 +65,7 @@ const Pokedex = () => {
         }
     }, [pokemon])
   
-    if (!pokemon) {
+    if (pokemon.length < 0) {
         return (
           <IonPage id="PokedexPage">
             <IonHeader class="ion-justify-content-start">
@@ -65,7 +81,10 @@ const Pokedex = () => {
             </IonContent>
           </IonPage>
         );
-      }
+    }
+
+
+
 
     return (
         <IonPage id="PokedexPage">
@@ -190,8 +209,8 @@ const Pokedex = () => {
                         </IonCard>
                     ))}
                     <IonButtons>
-                        <IonButton>Previus</IonButton>
-                        <IonButton>Next</IonButton>
+                        <IonButton onClick={handlePrevPage}>Previus</IonButton>
+                        <IonButton onClick={handleNextPage}>Next</IonButton>
                     </IonButtons>
                 </IonInfiniteScroll>
             </IonContent>

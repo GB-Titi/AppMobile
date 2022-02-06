@@ -18,14 +18,17 @@ type Pokedex = {
 //     results : {name: string; url: string}[]
 // }
 
-const useApi = () => {
+const useApi = (pkmnOffset? : number) => {
     const [pokedex, setPokedex] = useState<Pokedex|null>(null);
     const [pokemon, setInfo] = useState<any>([]);
     // const [description, setDescription] = useState<Pokemon|null>(null);
 
+
+
+    const offset = 50
     useEffect(() => {
         if(!pokedex){
-            fetch("https://pokeapi.co/api/v2/pokemon/?limit=50")
+            fetch(`https://pokeapi.co/api/v2/pokemon/?limit=100&${offset}`)
                 .then(res => res.json())
                 .then((res: Pokedex) => setPokedex(res))
         }
@@ -52,7 +55,7 @@ const useApi = () => {
         if (pokedex) {
             Promise.all(
                 pokedex.results.map((pokemon, i) => new Promise(resolve =>  setTimeout(() =>
-                fetch(pokemon.url).then(res => res.json()).then((info) => resolve({ pokemon, info })), 15 * i)))
+                fetch(pokemon.url).then(res => res.json()).then((info) => resolve({ pokemon, info })), 25 * i)))
             ).then((pokemonsInfo: any) => {
                 const newArr = pokemon.concat(pokemonsInfo);
                 console.log("🚀 ~ file: index.tsx ~ line 31 ~ ).then ~ newArr", newArr)

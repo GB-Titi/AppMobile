@@ -1,0 +1,41 @@
+.xp{
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    display: inline flow-root;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: solid 1px lightgray;
+    padding-bottom: 5px;
+    margin-left: 10px;
+}
+
+.Area{
+    text-align: center;
+width: 90%;
+margin: auto;
+text-transform: uppercase;
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+.area_name{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    display: inline flow-root; 
+}
+
+.pokemon_name{
+    font-family: 'PokemonTitle';
+}
+
+.pokemon_content{
+    font-family: 'PokedexFont';
+    font-size: 10px;
+    padding-bottom: 10px;
+}
+
+.desc{
+    font-size: 10px;
+}
