@@ -28,7 +28,7 @@ const useApi = (pkmnOffset? : number) => {
     const offset = 50
     useEffect(() => {
         if(!pokedex){
-            fetch(`https://pokeapi.co/api/v2/pokemon/?limit=100&${offset}`)
+            fetch(`https://pokeapi.co/api/v2/pokemon/?limit=100`)
                 .then(res => res.json())
                 .then((res: Pokedex) => setPokedex(res))
         }
